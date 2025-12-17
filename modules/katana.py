@@ -15,4 +15,7 @@ def run(cfg, log):
         "-o", str(outfile)
     ]
 
+    if cfg.proxy:
+        cmd.extend(["-proxy", cfg.proxy])
+
     run_command(cmd, log)

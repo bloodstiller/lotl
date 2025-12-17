@@ -12,7 +12,11 @@ def run(cfg, log):
     cmd = [
         "nikto",
         "-h", cfg.target_url,
+        
         "-output", str(outfile)
     ]
+
+    if cfg.proxy:
+        cmd.extend(["-useproxy", cfg.proxy])
 
     run_command(cmd, log)

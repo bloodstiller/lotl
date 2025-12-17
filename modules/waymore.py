@@ -14,7 +14,11 @@ def run(cfg, log):
         "-i", cfg.target_url,
         "-mode", "U",
         "-oU", str(outfile),
-        "-lcc", "1"  
+        "-lcc", "1"
     ]
+
+    if cfg.proxy:
+        cmd.extend(["-p", cfg.proxy])
+        
 
     run_command(cmd, log)

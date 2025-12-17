@@ -10,15 +10,14 @@ def run(cfg, log):
 
     tcpScan = [
         "sudo", "nmap",
-        #"-sV", "-sC", "-O", "-T4",
-        "--top-ports=5",
+        "-sV", "-sC", "-O", "-T3",
         "-oA", str(out / "tcp"),
         cfg.target_host
     ]
 
     udpScan = [
         "sudo", "nmap",
-        "-sU", "--top-ports=5",
+        "-sU", "--top-ports=100",
         "-oA", str(out / "udp"),
         cfg.target_host
     ]

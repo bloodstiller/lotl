@@ -21,5 +21,7 @@ def run(cfg, log):
         "-o", str(out / "wpscan.txt")
     ]
 
+    if cfg.proxy:
+        cmd.extend(["--proxy", cfg.proxy])
 
     run_command(cmd, log)

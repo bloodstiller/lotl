@@ -29,6 +29,8 @@ def run(cfg, log):
         "-severity", "low,medium,high,critical"
     ]
 
+    if cfg.proxy:
+        cmd.extend(["-proxy", cfg.proxy])
 
     run_command(cmd, log)
 

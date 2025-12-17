@@ -13,8 +13,12 @@ def run(cfg, log):
         "whatweb",
         cfg.target_url,
         "-a", "3",
+        
         "--log-verbose", str(outfile)
     ]
+
+    if cfg.proxy:
+        cmd.extend(["--proxy", cfg.proxy])
 
     run_command(cmd, log)
 
